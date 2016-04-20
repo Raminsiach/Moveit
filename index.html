@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Moveit</title>
+	<script src="moveit.js"></script>
+	<script>
+		window.onload = function() {
+			var path = document.querySelector('#path');
+			Moveit.put(path, {
+				start: '0%',
+				end: '10%'
+			});
+			Moveit.animate(path, {
+				start: '0%',
+				end: '20%',
+				duration: 1, // in Second
+				delay: 0, // in Second
+				timing: 'ease-out' //linear|ease|ease-in|ease-out|ease-in-out|step-start|step-end|steps(int,start|end)|cubic-bezier(n,n,n,n)|initial|inherit
+			});
+			Moveit.animate(path, {
+				start: '100%',
+				end: '100%',
+				duration: 1,
+				delay: 2,
+				timing: 'ease-out'
+			});
+		}
+		
+	</script>
+</head>
+
+<body>
+<svg width="500" height="400" xmlns="http://www.w3.org/2000/svg">
+ <g>
+  <title>background</title>
+  <rect fill="#fff" id="canvas_background" height="402" width="502" y="-1" x="-1"/>
+  <g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
+   <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/>
+  </g>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <line id="path" stroke-linecap="butt"  stroke-linejoin="round" stroke-miterlimit="10" id="svg_1" y2="168" x2="500" y1="168" x1="10" stroke-width="20" stroke="#000" fill="none"/>
+ </g>
+</svg>
+</body>
+</html>

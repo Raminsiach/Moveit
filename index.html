@@ -3,48 +3,116 @@
 <head>
 	<title>Moveit</title>
 	<script src="moveit.js"></script>
+	<style>
+		.container {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+		.container svg {
+			transform: scale(0.4);
+		}
+	</style>
 	<script>
 		window.onload = function() {
-			var path = document.querySelector('#path');
+			var popGroup = document.querySelectorAll('#popGroup line');
+			var circle = document.querySelector('#circle');
+			var tick = document.querySelector('#tick1');
+			var tick2 = document.querySelector('#tick2');
 			
-			Moveit.put(path, {
-				start: '0%',
-				end: '0%',
-				opacity: '0'
+			Moveit.put(popGroup, {
+			  start: '0%',
+			  end: '0%',
+			  visibility: 1
+			});
+			Moveit.put(tick, {
+			  start: '0%',
+			  end: '0%',
+			  visibility: 1
+			});
+			Moveit.put(tick2, {
+			  start: '0%',
+			  end: '0%',
+			  visibility: 1
+			});
+			Moveit.put(circle, {
+			  start: '0%',
+			  end: '0%',
+			  visibility: 1
 			});
 
-			Moveit.animate(path, {
+			Moveit.animate(circle, {
+				visibility: 1,
 				start: '0%',
 				end: '100%',
-				duration: 0.1, // in Second
-				delay: 0, // in Second
-				timing: 'ease-out' //linear|ease|ease-in|ease-out|ease-in-out|step-start|step-end|steps(int,start|end)|cubic-bezier(n,n,n,n)|initial|inherit
-			});
-			Moveit.animate(path, {
+				duration: 1,
+				delay: 0,
+				timing: 'ease-out'
+			})
+			Moveit.animate(tick, {
+				visibility: 1,
+				start: '0%',
+				end: '100%',
+				duration: 0.2,
+				delay: 0.5,
+				timing: 'ease-out'
+			})
+			Moveit.animate(tick2, {
+				visibility: 1,
+				start: '0%',
+				end: '80%',
+				duration: 0.2,
+				delay: 0.7,
+				timing: 'ease-out'
+			})
+			Moveit.animate(popGroup, {
+				visibility: 1,
+				start: '20%',
+				end: '60%',
+				duration: 0.2,
+				delay: 1.,
+				timing: 'ease-in'
+			}).animate(popGroup, {
+				visibility: 1,
 				start: '100%',
 				end: '100%',
-				duration: 0.1,
-				delay: 0.2,
-				timing: 'ease-out'
+				duration: 0.2,
+				delay: 1.2,
+				timing: 'ease-in-out'
 			});
+
 		}
-		
 	</script>
 </head>
 
 <body>
-<svg width="510" height="400" xmlns="http://www.w3.org/2000/svg">
+<div class="container">
+<svg width="580" height="400" xmlns="http://www.w3.org/2000/svg">
+ <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
  <g>
-  <title>background</title>
-  <rect fill="#fff" id="canvas_background" height="402" width="502" y="-1" x="-1"/>
+  <rect  fill="#fff" id="canvas_background" height="402" width="582" y="-1" x="-1"/>
   <g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
    <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/>
   </g>
  </g>
  <g>
-  <title>Layer 1</title>
-  <line id="path" stroke-linecap="round"  stroke-linejoin="round" stroke-miterlimit="10" id="svg_1" y2="168" x2="500" y1="168" x1="10" stroke-width="20" stroke="#000" fill="none"/>
+  <circle id="circle" r="80" id="svg_1" cy="191.5" cx="294" stroke-width="10" stroke="#000" fill="#fff"/>
+  <g id="popGroup">
+   <line stroke="#000" stroke-linecap="butt" stroke-linejoin="null" id="svg_2" y2="77.981489" x2="291.5" y1="98" x1="291.5" fill-opacity="null" stroke-opacity="null" stroke-width="5" fill="none"/>
+  <line transform="rotate(45 375.49999999999994,123.99074554443358) " stroke="#000" stroke-linecap="butt" stroke-linejoin="null" id="svg_3" y2="113.981489" x2="375.5" y1="134" x1="375.5" fill-opacity="null" stroke-opacity="null" stroke-width="5" fill="none"/>
+  <line transform="rotate(90 398.50000000000006,198.99075317382815) " stroke="#000" stroke-linecap="butt" stroke-linejoin="null" id="svg_4" y2="188.981489" x2="398.5" y1="209" x1="398.5" fill-opacity="null" stroke-opacity="null" stroke-width="5" fill="none"/>
+  <line transform="rotate(135 363.5,274.99075317382807) " stroke="#000" stroke-linecap="butt" stroke-linejoin="null" id="svg_5" y2="264.981489" x2="363.5" y1="285" x1="363.5" fill-opacity="null" stroke-opacity="null" stroke-width="5" fill="none"/>
+  <line transform="rotate(-180 285.5,299.99072265625) " stroke="#000" stroke-linecap="butt" stroke-linejoin="null" id="svg_6" y2="289.981489" x2="285.5" y1="310" x1="285.5" fill-opacity="null" stroke-opacity="null" stroke-width="5" fill="none"/>
+  <line transform="rotate(-135 201.49999999999997,268.99072265625) " stroke="#000" stroke-linecap="butt" stroke-linejoin="null" id="svg_7" y2="258.981489" x2="201.5" y1="279" x1="201.5" fill-opacity="null" stroke-opacity="null" stroke-width="5" fill="none"/>
+  <line transform="rotate(-90 183.50000000000003,197.99075317382812) " stroke="#000" stroke-linecap="butt" stroke-linejoin="null" id="svg_8" y2="187.981489" x2="183.5" y1="208" x1="183.5" fill-opacity="null" stroke-opacity="null" stroke-width="5" fill="none"/>
+  <line stroke="#000" transform="rotate(-45 207.49999999999997,127.99075317382812) " stroke-linecap="butt" stroke-linejoin="null" id="svg_9" y2="117.981489" x2="207.5" y1="138" x1="207.5" fill-opacity="null" stroke-opacity="null" stroke-width="5" fill="none"/>
  </g>
+   <g id="tick">
+   <line id="tick1" stroke="#000" stroke-linecap="null" stroke-linejoin="null" id="svg_10" y2="218.000001" x2="291.500001" y1="200" x1="263.5" fill-opacity="null" stroke-opacity="null" stroke-width="10" fill="none"/>
+   <line id="tick2" transform="rotate(10.907037734985352 306.99999999999994,186.49999999999983) " stroke="#000" stroke-linecap="null" stroke-linejoin="null" id="svg_11" y2="156.999997" x2="319.500001" y1="216" x1="294.5" fill-opacity="null" stroke-opacity="null" stroke-width="10" fill="none"/>
+  </g>
+   </g>
 </svg>
-</body>
+</div>
 </html>

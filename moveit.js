@@ -16,14 +16,15 @@ var Moveit = {
 		}
 		return d;
 	},
-	setupPath: function(el, length, start, end) {
+	setupPath: function(el, length, start, end, opacity) {
+		el.style.strokeOpacity = opacity;
 		start = parseFloat(start.substring(0, start.indexOf('%')));
 		end = parseFloat(end.substring(0, end.indexOf('%')));
 		var dash = (end - start);
 		var gap = (100 - (end - start));
 		var offset = (100 - start);
-		el.style.strokeDasharray = ((dash/100) * length) + ' ' + ((gap/100) * length);
-		el.style.strokeDashoffset = (offset/100) * length;
+		el.style.strokeDasharray = ((dash/100) * length) + ' ' + ((gap/100) * length + 20);
+		el.style.strokeDashoffset = (offset/100) * length + 10;
 	},
 	put: function(el, options) {
 		var length = this.getLength(el);
@@ -35,10 +36,12 @@ var Moveit = {
 		} else {
 			el.style.visibility = 'visible';
 		}
-		this.setupPath(el, length, options.start, options.end);
+		this.setupPath(el, length, options.start, options.end, options.opacity);
 	},
 	animate: function(el, options) {
 		var length = this.getLength(el);
+		var opacity = (options.opacity) ? options.opacity : '1';
+		el.style.strokeOpacity = opacity;
 		var delay = (options.delay) ? options.delay : 0;
 		var timing = (options.timing) ? options.timing : 'linear';
 		el.style.transition = el.style.WebkitTransition = 'none';

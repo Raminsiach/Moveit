@@ -57,8 +57,15 @@ var Moveit = {
 		if(el.style) {
 			el.getBoundingClientRect();
 			var length = this.getLength(el);
-			var opacity = (options.visibility) ? options.visibility : 1;
-			el.style.strokeOpacity = opacity;
+			var opacity = (options.opacity !== undefined) ? options.opacity : 1;
+			var visibility = (options.visibility !== undefined) ? options.visibility : 1;
+			if(visibility === 0) {
+				el.style.visibility = 'hidden';	
+			} else if(visibility === 1) {
+				el.style.visibility = 'visible';
+			} else {
+				el.style.visibility = 'visible';
+			}
 			var delay = (options.delay) ? options.delay : 0;
 			var timing = (options.timing) ? options.timing : 'linear';
 			el.style.transition = el.style.WebkitTransition = 'none';

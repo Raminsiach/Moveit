@@ -17,7 +17,7 @@ Move it is an open source javascript library to animate SVG path using SVG strok
 
 
 
-Include [`Moveit.js`](/Moveit.js) in your project. Then in your html's body add following code:
+Include [`moveit.js`](moveit.js) in your project. Then in your html's body add following code:
 
 ```html
 <svg width="400" height="400">

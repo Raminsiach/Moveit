@@ -11,6 +11,7 @@ Move it is an open source javascript library to animate SVG path using SVG strok
 ### Quick start
 
 > Checkout these two examples to see how the effect works.
+
 1. [SVG animated burger menu](http://www.kodhus.com/kodity/kod/codify/LLZbtj/layout/0)
 2. [Animated success Icon](http://kodhus.com/library/moveit-demo/)
 

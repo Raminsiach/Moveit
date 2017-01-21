@@ -3,7 +3,7 @@
 
 > Moveit is in active development phase. It is a library that you can use in order to animate SVG path in your html.
 
-Move it is an open source javascript library to animate SVG path using SVG strok dasharray and stroke dashoffset attributes.
+Move it is an open source javascript library to animate SVG path using SVG stroke dasharray and stroke dashoffset attributes.
 * Pure javascript
 * Utilizing css transitions
 * No Javascript animation code

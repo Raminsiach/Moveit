@@ -61,12 +61,12 @@ Moveit.put('YOUR SVG PATH', {
 });
 ```
 > Animating SVG path:
+
 ```
 Moveit.put('YOUR SVG PATH', {
   start: '0%',
   end: '14%'
 });
-```
 ```
 
 ## Frequently Asked Questions
